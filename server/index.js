@@ -33,8 +33,9 @@ app.use('/api/listing',listingroute)
 
 
 app.use(express.static(path.join(dirname,'/client/dist')))
+
 app.get('*',(req,res)=>{
-    res.sendFile(path.join(dirname,'client','dist','index.html'))
+    res.sendFile(path.resolve(dirname,'client','dist','index.html'))
 })
 
 
