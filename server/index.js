@@ -6,9 +6,7 @@ const cookieparser = require('cookie-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const path = require('path')
-const dirname = path.resolve();
 require('dotenv').config()
-
 
 
 
@@ -25,17 +23,19 @@ app.use(cors({
     credentials:true
 }))
 
+const dirname = path.resolve();
 
-app.use(express.static(path.join(dirname,'/client/dist')))
-app.get('*',(req,res)=>{
-    res.sendFile(path.join(dirname,'client','dist','index.html'))
-})
 
 //routes
 app.use('/api/user',userroute)
 app.use('/api/auth',authroute)
 app.use('/api/listing',listingroute)
 
+
+app.use(express.static(path.join(dirname,'/client/dist')))
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(dirname,'client','dist','index.html'))
+})
 
 //error middleware
 app.use((err,req,res,next)=>{
