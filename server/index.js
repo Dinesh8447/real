@@ -32,11 +32,11 @@ app.use('/api/auth',authroute)
 app.use('/api/listing',listingroute)
 
 
-app.use(express.static(path.join(dirname,'/client/dist')))
+// app.use(express.static(path.join(dirname,'/client/dist')))
 
-app.get('*',(req,res)=>{
-    res.sendFile(path.resolve(dirname,'client','dist','index.html'))
-})
+// app.get('*',(req,res)=>{
+//     res.sendFile(path.resolve(dirname,'client','dist','index.html'))
+// })
 
 
 //error middleware
