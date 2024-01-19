@@ -21,7 +21,7 @@ const listingroute = require('./router/listingroute')
 app.use(cookieparser())
 app.use(bodyparser.json())
 app.use(cors({
-    origin:['http://localhost:5173'],
+    origin:['http://localhost:5173','https://real-woad.vercel.app'],
     credentials:true
 }))
 
