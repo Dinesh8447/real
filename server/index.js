@@ -37,8 +37,8 @@ app.use('/api/listing',listingroute)
 //     res.sendFile(path.join(dirname,'client','dist','index.html'))
 // })
 
-const path = require("path");
-app.use(express.static(path.join(__dirname, "build")));
+// const path = require("path");
+// app.use(express.static(path.join(__dirname, "build")));
 
 //error middleware
 app.use((err,req,res,next)=>{
