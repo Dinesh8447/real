@@ -23,7 +23,7 @@ app.use(cors({
     credentials:true
 }))
 
-// const dirname = path.resolve();
+const dirname = path.resolve();
 
 
 //routes
@@ -32,13 +32,11 @@ app.use('/api/auth',authroute)
 app.use('/api/listing',listingroute)
 
 
-// app.use(express.static(path.join(dirname,'/client/dist')))
-// app.get('*',(req,res)=>{
-//     res.sendFile(path.join(dirname,'client','dist','index.html'))
-// })
+app.use(express.static(path.join(dirname,'/client/dist')))
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(dirname,'client','dist','index.html'))
+})
 
-// const path = require("path");
-// app.use(express.static(path.join(__dirname, "build")));
 
 //error middleware
 app.use((err,req,res,next)=>{
