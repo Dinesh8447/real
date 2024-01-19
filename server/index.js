@@ -19,8 +19,7 @@ const listingroute = require('./router/listingroute')
 app.use(cookieparser())
 app.use(bodyparser.json())
 app.use(cors({
-    // origin:['http://localhost:5173'],
-    origin:['https://real-estate-j5w6.vercel.app'],
+    origin:['http://localhost:5173'],
     credentials:true
 }))
 //routes
