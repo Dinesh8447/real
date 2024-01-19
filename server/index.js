@@ -5,8 +5,8 @@ const bodyparser = require('body-parser')
 const cookieparser = require('cookie-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const path = require('path')
-const __dirname = path.resolve();
+// const path = require('path')
+// const __dirname = path.resolve();
 require('dotenv').config()
 
 
@@ -26,10 +26,10 @@ app.use(cors({
 }))
 
 
-app.use(express.static(path.join(__dirname,'/client/dist')))
-app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'client','dist','index.html'))
-})
+// app.use(express.static(path.join(__dirname,'/client/dist')))
+// app.get('*',(req,res)=>{
+//     res.sendFile(path.join(__dirname,'client','dist','index.html'))
+// })
 
 //routes
 app.use('/api/user',userroute)
